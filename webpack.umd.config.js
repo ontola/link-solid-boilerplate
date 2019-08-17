@@ -1,18 +1,18 @@
 const path = require('path');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: ['./src/index.js'],
+    entry: {
+      index: './src/index.js',
+    },
     mode: production ? 'production' : 'development',
     devtool: 'source-map',
     output: {
-      filename: "index.js",
       libraryTarget: 'umd',
-      path: path.resolve(__dirname)
+      path: path.join(process.cwd(), '')
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -37,13 +37,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: './node_modules/todomvc-common/base.css', to: './dist/css/' },
-            { from: './node_modules/todomvc-app-css/index.css', to: './dist/css/' },
-        ]),
         new webpack.DefinePlugin({
           FRONTEND_ROUTE: production
-            ? JSON.stringify('https://fletcher91.github.io/link-redux-todo/')
+            ? JSON.stringify('https://fletcher91.github.io/link-minesweeper/')
             : JSON.stringify('http://localhost:8000/'),
         }),
     ],

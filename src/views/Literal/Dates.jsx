@@ -1,7 +1,7 @@
+import { defaultNS as NS } from 'link-lib'
 import { register } from 'link-redux'
 import React from 'react';
 
-import { defaultNS as NS } from 'link-lib'
 import { browserListTopology } from '../../topologies/BrowserList'
 
 const Dates = ({ linkedProp }) => (

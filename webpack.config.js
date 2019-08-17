@@ -1,10 +1,9 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: ['babel-polyfill', './src/app.jsx'],
+    entry: './src/app.jsx',
     mode: production ? 'production' : 'development',
     devtool: 'source-map',
     resolve: {
@@ -30,13 +29,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([
-            { from: './node_modules/todomvc-common/base.css', to: './css/' },
-            { from: './node_modules/todomvc-app-css/index.css', to: './css/' },
-        ]),
         new webpack.DefinePlugin({
           FRONTEND_ROUTE: production
-            ? JSON.stringify('https://fletcher91.github.io/link-redux-todo/')
+            ? JSON.stringify('https://fletcher91.github.io/link-minesweeper/')
             : JSON.stringify('http://localhost:8000/'),
         }),
     ],

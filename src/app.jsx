@@ -15,10 +15,6 @@ import views from './views/index'
 
 LRS.registerAll(views);
 
-app.ALL_TODOS = 'all';
-app.ACTIVE_TODOS = 'active';
-app.COMPLETED_TODOS = 'completed';
-
 const TodoApp = () => {
   const Text = ({ location }) => {
     const resource = new URLSearchParams(location.search).get('resource');

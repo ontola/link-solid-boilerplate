@@ -1,8 +1,8 @@
 import { LinkedResourceContainer, register } from 'link-redux'
 import { Namespace } from "rdflib"
 import React from 'react';
-import BrowserListHeader from '../../components/BrowserListHeader'
 
+import BrowserListHeader from '../../components/BrowserListHeader'
 import BrowserList from '../../topologies/BrowserList'
 
 const Container = ({ contains }) => (
