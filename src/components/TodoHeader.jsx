@@ -7,7 +7,7 @@ const TodoHeader = ({ name, subject }) => {
   const [editing, setEditing] = React.useState(false)
   const [editedName, setName] = React.useState(name.value)
   const handleKeyUp = confirmKeyUpHandler(
-    (name) => lrs.actions.todo.updateTitle(subject, name),
+    (name) => lrs.actions.minesweeper.updateTitle(subject, name),
     setEditing,
     setName,
   )

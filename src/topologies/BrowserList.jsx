@@ -1,8 +1,9 @@
-import { Namespace } from 'rdflib'
 import { TopologyProvider } from 'link-redux'
 import React from 'react';
 
-export const browserListTopology = Namespace("https://fletcher91.github.io/link-redux-todo/")('browserList');
+import { minesweeper } from '../helpers/minesweeper'
+
+export const browserListTopology = minesweeper('browserList');
 
 class BrowserList extends TopologyProvider {
   constructor(props) {

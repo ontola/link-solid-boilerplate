@@ -1,9 +1,9 @@
+import { defaultNS as NS } from 'link-lib'
 import { Property, register } from 'link-redux'
 import { NamedNode } from 'rdflib';
 import React from 'react';
-import BrowserListItem from '../../components/BrowserListItem'
 
-import { defaultNS as NS } from 'link-lib'
+import BrowserListItem from '../../components/BrowserListItem'
 import { browserListTopology } from '../../topologies/BrowserList'
 
 const retrieveFilename = (iri, folder) => {

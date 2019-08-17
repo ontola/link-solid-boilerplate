@@ -1,17 +1,47 @@
+.TodoList-Main {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
 
-.Button {
+.TodoList-Main button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.todoapp .Button {
     background: rgba(0, 0, 0, 0.054);
     cursor: pointer;
     margin: 0 .5em;
     padding: 1.0em;
 }
 
-.TodoMessage {
+.todoapp .TodoMessage {
     padding: 10px;
     text-align: center;
 }
 
-.info {
+.todoapp .info {
     color: #737373;
 }
 
@@ -20,15 +50,19 @@
     white-space: nowrap;
 }
 
+.todoapp header.header {
+    display: none;
+}
+
 /* From https://loading.io/css/ */
-.lds-ring {
+.todoapp .lds-ring {
     display: flex;
     position: relative;
     margin: auto;
     width: 64px;
     height: 64px;
 }
-.lds-ring div {
+.todoapp .lds-ring div {
     box-sizing: border-box;
     display: block;
     position: absolute;
@@ -58,19 +92,19 @@
     }
 }
 
-.footer {
+.todoapp .footer {
     display: flex;
     flex-direction: row-reverse;
     height: auto;
     padding: 0;
 }
 
-.clear-completed {
+.todoapp .clear-completed {
     padding: .8em;
     z-index: 1;
 }
 
-.save-pod {
+.todoapp .save-pod {
     background: #7C4DFF;
     color: white;
     cursor: pointer;
@@ -78,14 +112,14 @@
     z-index: 1;
 }
 
-.BrowserList {
+.todoapp .BrowserList {
     padding: 0;
 }
 
-.BrowserList li:nth-child(odd){
+.todoapp .BrowserList li:nth-child(odd){
     background-color: #dadada66;
 }
 
-.PreviewList {
+.todoapp .PreviewList {
     margin: 1em;
 }

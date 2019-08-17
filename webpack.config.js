@@ -16,14 +16,6 @@ module.exports = {
               exclude: /(node_modules|bower_components)/,
               use: {
                 loader: 'babel-loader',
-                options: {
-                    plugins: [
-                      '@babel/plugin-transform-react-jsx',
-                      '@babel/plugin-proposal-class-properties',
-                      '@babel/plugin-proposal-optional-chaining',
-                    ],
-                    presets: ['@babel/preset-env']
-                }
               }
             }
         ]

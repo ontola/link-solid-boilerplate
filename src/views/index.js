@@ -7,6 +7,7 @@ import Dates from './Literal/Dates'
 import LoadingResource from './LoadingResource'
 import Resource from './rdfsResource/Resource'
 import ResourceBrowserList from './rdfsResource/ResourceBrowserList'
+import Minesweeper from './minesweeper/index'
 
 export default [
   ...Container,
@@ -18,4 +19,5 @@ export default [
   ...PersonalProfileDocument,
   ...Resource,
   ...ResourceBrowserList,
+  ...Minesweeper,
 ]
