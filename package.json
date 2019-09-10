@@ -1,11 +1,15 @@
 {
-  "name": "link-minesweeper",
-  "version": "1.0.6",
-  "description": "A minesweeper game in link-redux",
+  "name": "link-mash-app-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate to set up link apps which can be run stand-alone and loaded as plugins",
   "main": "index.js",
-  "author": "Fletcher91 <thomvankalkeren@gmail.com>",
+  "author": "Fletcher91 <thom@ontola.io>",
   "license": "GPL-3.0-or-later",
   "private": false,
+  "applicationURL": {
+    "development": "http://localhost:8000/",
+    "production": "<enter the url your application will be run from>"
+  },
   "scripts": {
     "build": "yarn build:bundle && yarn build:extension",
     "build:bundle": "webpack",
@@ -22,6 +26,7 @@
     "http-status-codes": "^1.3.0",
     "link-lib": "=1.0.0-rc2-solid",
     "link-rdflib": "npm:link-rdflib@0.19.1-20190124T144209",
+    "//": "=1.0.0-rc4.5",
     "link-redux": "=1.0.0-rc2",
     "rdflib": "npm:link-rdflib@0.19.1-20190124T144209",
     "react": "^16.9.0",

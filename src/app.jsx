@@ -15,7 +15,7 @@ import views from './views/index'
 
 LRS.registerAll(views);
 
-const MinesweeperApp = () => {
+const App = () => {
   const Text = ({ location }) => {
     const resource = new URLSearchParams(location.search).get('resource');
 
@@ -55,6 +55,6 @@ const MinesweeperApp = () => {
 }
 
 ReactDOM.render(
-  React.createElement(MinesweeperApp),
-  document.getElementsByClassName('todoapp')[0]
+  React.createElement(App),
+  document.getElementsByClassName('app')[0]
 );

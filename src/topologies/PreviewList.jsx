@@ -1,9 +1,9 @@
 import { TopologyProvider } from 'link-redux'
 import React from 'react';
 
-import { minesweeper } from '../helpers/minesweeper'
+import { appNS } from '../helpers/app'
 
-export const previewListTopology = minesweeper('previewList');
+export const previewListTopology = appNS('previewList');
 
 class PreviewList extends TopologyProvider {
   constructor(props) {

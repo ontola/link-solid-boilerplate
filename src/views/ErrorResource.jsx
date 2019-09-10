@@ -20,7 +20,7 @@ const ErrorResource = ({ error, linkRequestStatus: { status }, subject}) => {
           "File couldn't be found, create it in your pod first",
           <button
             className="Button"
-            onClick={() => lrs.actions.minesweeper.initialize(subject)}
+            onClick={() => lrs.actions.app.initialize(subject)}
           >
             Initialize
           </button>,

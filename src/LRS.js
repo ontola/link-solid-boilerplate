@@ -3,12 +3,10 @@ import { Namespace, Statement } from 'rdflib';
 
 import logging from './middleware/logging'
 import solidMiddleware from './middleware/solid';
-import minesweeperMiddleware from './middleware/minesweeper';
 
 const LRS = createStore({}, [
 	logging(),
 	solidMiddleware,
-	minesweeperMiddleware,
 ]);
 
 LRS.namespaces.ldp = Namespace('http://www.w3.org/ns/ldp#');
@@ -30,7 +28,7 @@ LRS.api.registerTransformer(
  */
 LRS.addOntologySchematics([
 	new Statement(NS.rdfs('Bag'), NS.rdfs('subClassOf'), NS.rdfs('Resource')),
-	new Statement(Namespace("https://fletcher91.github.io/link-minesweeper/")('MinesweeperGame'), NS.rdfs('subClassOf'), NS.rdfs('Bag')),
+	// new Statement(Namespace("https://fletcher91.github.io/link-minesweeper/")('MinesweeperGame'), NS.rdfs('subClassOf'), NS.rdfs('Bag')),
 ])
 LRS.api.accept.default = "text/turtle"
 

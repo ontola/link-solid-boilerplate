@@ -2,6 +2,8 @@ const path = require('path');
 
 const webpack = require('webpack');
 
+import packageJSON from './package';
+
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -31,8 +33,8 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
           FRONTEND_ROUTE: production
-            ? JSON.stringify('https://fletcher91.github.io/link-minesweeper/')
-            : JSON.stringify('http://localhost:8000/'),
+            ? JSON.stringify(packageJSON.applicationURL.production)
+            : JSON.stringify(packageJSON.applicationURL.development),
         }),
     ],
     externals: {

@@ -10,7 +10,7 @@ const buttonStyle = {
 }
 
 /**
- * Everything is a rdfs:Resource, so if we hit this view, it means the loaded minesweeper list hasn't got
+ * Everything is a rdfs:Resource, so if we hit this view, it means the loaded app list hasn't got
  * the right type (app:TodoList), so we ask the user to initialize the datastructure we need.
  */
 const Resource = ({ subject }) => {
@@ -18,11 +18,11 @@ const Resource = ({ subject }) => {
 
 	return (
 		<p className="TodoMessage" style={messageStyle}>
-			It looks like the resource isn't a minesweeper game, do you want to initialize the file?
+			It looks like the resource isn't a known type, do you want to initialize the file?
 			<button
 				className="Button"
 				style={buttonStyle}
-				onClick={() => lrs.actions.minesweeper.initialize(subject)}
+				onClick={() => lrs.actions.app.initialize(subject)}
 			>
 				Initialize now
 			</button>

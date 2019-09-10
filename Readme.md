@@ -1,3 +1,3 @@
-# Link Minesweeper
+# Link Solid Boilerplate
 
-This is an example React Minesweeper application for Link-redux.
+A basic boilerplate for creating data browser modules which can also run as standalone apps.
