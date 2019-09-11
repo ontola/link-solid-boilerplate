@@ -1,7 +1,7 @@
 import { Namespace, Statement } from 'rdflib'
 import { defaultNS as NS } from 'link-lib';
 
-import packageJSON from "../package";
+import packageJSON from "../package.json";
 
 import views from "./views/index";
 

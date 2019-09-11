@@ -2,7 +2,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 
-import packageJSON from './package';
+const packageJSON = require('./package.json');
 
 const production = process.env.NODE_ENV === 'production';
 

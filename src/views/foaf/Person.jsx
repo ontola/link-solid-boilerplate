@@ -3,7 +3,6 @@ import { NamedNode, Namespace } from 'rdflib'
 import { defaultNS as NS } from 'link-lib'
 import { LinkedResourceContainer, register } from 'link-redux'
 import Link from '../../components/Link'
-import PropertyDisplayRow from '../../components/PropertyDisplayRow'
 
 import PreviewList from '../../topologies/PreviewList'
 
