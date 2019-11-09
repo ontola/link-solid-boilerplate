@@ -10,6 +10,9 @@ module.exports = (api) => {
       '@babel/plugin-proposal-class-properties',
       '@babel/plugin-proposal-optional-chaining',
     ],
-    presets: [envPlugin],
+    presets: [
+      envPlugin,
+      '@babel/preset-typescript',
+    ],
   };
 }

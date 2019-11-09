@@ -1,8 +1,8 @@
 import * as statusCodes from 'http-status-codes';
-import { register, useLRS } from 'link-redux'
+import { useLRS } from 'link-redux'
 import React from 'react';
 
-import { defaultNS as NS } from 'link-lib'
+import ll from '../ontology/ll'
 import { browserListTopology } from '../topologies/BrowserList'
 import { previewListTopology } from '../topologies/PreviewList'
 
@@ -53,7 +53,7 @@ const ErrorResource = ({ error, linkRequestStatus: { status }, subject}) => {
   )
 }
 
-ErrorResource.type = NS.ll('ErrorResource');
+ErrorResource.type = ll.ErrorResource;
 
 ErrorResource.topology = [
   undefined,
@@ -61,4 +61,4 @@ ErrorResource.topology = [
   previewListTopology,
 ];
 
-export default register(ErrorResource);
+export default ErrorResource;

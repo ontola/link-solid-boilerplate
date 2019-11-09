@@ -1,9 +1,11 @@
+import rdf from '@ontologies/core'
+import foaf from '@ontologies/foaf'
 import React from 'react';
-import { NamedNode, Namespace } from 'rdflib'
-import { defaultNS as NS } from 'link-lib'
-import { LinkedResourceContainer, register } from 'link-redux'
-import Link from '../../components/Link'
+import { LinkedResourceContainer } from 'link-redux'
 
+import Link from '../../components/Link'
+import ldp from '../../ontology/ldp'
+import vcard from '../../ontology/vcard'
 import PreviewList from '../../topologies/PreviewList'
 
 const styles = {
@@ -59,18 +61,18 @@ const Person = ({
   </div>
 );
 
-Person.type = NS.foaf('Person');
-const vcard = Namespace('http://www.w3.org/2006/vcard/ns#')
+Person.type = foaf.Person;
+
 Person.mapDataToProps = {
-  inbox: { label: new NamedNode('http://www.w3.org/ns/ldp#inbox')},
+  inbox: ldp.inbox,
   knows: {
-    label: NS.foaf('knows'),
+    label: foaf.knows,
     limit: Infinity,
   },
-  name: { label: NS.foaf('name')},
-  hasPhoto: { label: vcard('hasPhoto')},
-  organizationName: { label: vcard('organization-name')},
-  storage: { label: new NamedNode('http://www.w3.org/ns/pim/space#storage')},
+  name: foaf.name,
+  hasPhoto: vcard.ns('hasPhoto'),
+  organizationName: vcard.ns('organization-name'),
+  storage: rdf.namedNode('http://www.w3.org/ns/pim/space#storage'),
 }
 
-export default register(Person);
+export default Person;

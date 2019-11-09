@@ -1,7 +1,7 @@
-import { defaultNS as NS } from 'link-lib'
-import { register } from 'link-redux'
+import { DEFAULT_TOPOLOGY } from 'link-lib'
 import React from 'react';
 
+import ll from '../ontology/ll'
 import { browserListTopology } from '../topologies/BrowserList'
 import { previewListTopology } from '../topologies/PreviewList'
 
@@ -14,12 +14,12 @@ const LoadingResource = () => (
   </div>
 );
 
-LoadingResource.type = NS.ll('LoadingResource');
+LoadingResource.type = ll.LoadingResource;
 
 LoadingResource.topology = [
-  undefined,
+  DEFAULT_TOPOLOGY,
   browserListTopology,
   previewListTopology,
 ];
 
-export default register(LoadingResource);
+export default LoadingResource;

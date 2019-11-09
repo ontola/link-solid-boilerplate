@@ -9,13 +9,13 @@ import Resource from './rdfsResource/Resource'
 import ResourceBrowserList from './rdfsResource/ResourceBrowserList'
 
 export default [
-  ...Container,
-  ...Dates,
-  ...ErrorResource,
-  ...LoadingResource,
-  ...Person,
-  ...PersonPreviewList,
-  ...PersonalProfileDocument,
-  ...Resource,
-  ...ResourceBrowserList,
+  Container,
+  Dates,
+  ErrorResource,
+  LoadingResource,
+  Person,
+  PersonPreviewList,
+  PersonalProfileDocument,
+  Resource,
+  ResourceBrowserList,
 ]

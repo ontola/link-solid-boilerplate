@@ -1,5 +1,5 @@
-import { defaultNS as NS } from 'link-lib'
-import { register, useLRS } from 'link-redux'
+import rdfs from '@ontologies/rdfs'
+import { useLRS } from 'link-redux'
 import React from 'react';
 
 const messageStyle = {
@@ -30,6 +30,6 @@ const Resource = ({ subject }) => {
 	);
 };
 
-Resource.type = NS.rdfs('Resource');
+Resource.type = rdfs.Resource;
 
-export default register(Resource);
+export default Resource;

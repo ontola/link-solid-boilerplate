@@ -1,10 +1,9 @@
+import foaf from '@ontologies/foaf'
+import { Property } from 'link-redux'
 import React from 'react';
-import { Property, register } from 'link-redux'
 
-import { defaultNS as NS } from 'link-lib'
+const PersonalProfileDocument = () => <Property label={foaf.primaryTopic} />;
 
-const PersonalProfileDocument = () => <Property label={NS.foaf('primaryTopic')} />;
+PersonalProfileDocument.type = foaf.PersonalProfileDocument;
 
-PersonalProfileDocument.type = NS.foaf('PersonalProfileDocument');
-
-export default register(PersonalProfileDocument);
+export default PersonalProfileDocument;

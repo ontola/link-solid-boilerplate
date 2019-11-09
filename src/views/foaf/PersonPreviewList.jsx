@@ -1,6 +1,5 @@
+import foaf from '@ontologies/foaf';
 import React from 'react';
-import { defaultNS as NS } from 'link-lib'
-import { register } from 'link-redux';
 
 import Link from '../../components/Link'
 import { previewListTopology } from '../../topologies/PreviewList'
@@ -15,12 +14,12 @@ const PersonPreviewList = ({ name }) => (
   </Link>
 );
 
-PersonPreviewList.type = NS.foaf('Person');
+PersonPreviewList.type = foaf.Person;
 
 PersonPreviewList.topology = previewListTopology;
 
 PersonPreviewList.mapDataToProps = {
-  name: {label: NS.foaf('name')},
+  name: foaf.name,
 }
 
-export default register(PersonPreviewList);
+export default PersonPreviewList;

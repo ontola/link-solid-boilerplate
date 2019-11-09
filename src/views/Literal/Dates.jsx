@@ -1,5 +1,5 @@
-import { defaultNS as NS } from 'link-lib'
-import { register } from 'link-redux'
+import rdfs from '@ontologies/rdfs'
+import xsd from '@ontologies/xsd'
 import React from 'react';
 
 import { browserListTopology } from '../../topologies/BrowserList'
@@ -11,15 +11,15 @@ const Dates = ({ linkedProp }) => (
 );
 
 // Set the type to Literal to render individual values.
-Dates.type = NS.rdfs("Literal");
+Dates.type = rdfs.Literal;
 
 /**
  * The `property` field now acts to resolve the data type rather than the predicate.
  * In this case, the dbpedia `usDollar` type.
  */
-Dates.property = NS.xsd("dateTime");
+Dates.property = xsd.dateTime;
 
 // Here too, we can adjust rendering for the appropriate context.
 Dates.topology = browserListTopology;
 
-export default register(Dates);
+export default Dates;

@@ -1,8 +1,8 @@
-import { LinkedResourceContainer, register } from 'link-redux'
-import { Namespace } from "rdflib"
+import { LinkedResourceContainer } from 'link-redux'
 import React from 'react';
 
 import BrowserListHeader from '../../components/BrowserListHeader'
+import ldp from '../../ontology/ldp'
 import BrowserList from '../../topologies/BrowserList'
 
 const Container = ({ contains }) => (
@@ -20,13 +20,13 @@ const Container = ({ contains }) => (
   </BrowserList>
 );
 
-Container.type = Namespace('http://www.w3.org/ns/ldp#')('Container');
+Container.type = ldp.Container;
 
 Container.mapDataToProps = {
   contains: {
-    label: Namespace('http://www.w3.org/ns/ldp#')('contains'),
+    label: ldp.contains,
     limit: Infinity,
   }
 };
 
-export default register(Container);
+export default Container;
