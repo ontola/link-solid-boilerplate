@@ -1,10 +1,11 @@
 import rdfs from '@ontologies/rdfs'
 import xsd from '@ontologies/xsd'
+import { FC, PropertyProps } from "link-redux";
 import React from 'react';
 
 import { browserListTopology } from '../../topologies/BrowserList'
 
-const Dates = ({ linkedProp }) => (
+const Dates: FC<PropertyProps> = ({ linkedProp }) => (
   <span>
     {new Date(linkedProp.value).toLocaleString()}
   </span>

@@ -1,12 +1,13 @@
-import React from 'react';
+import { Node } from "@ontologies/core";
+import React, { CSSProperties, FC } from 'react';
 
 import Link from './Link'
 
 const style = {
   listStyle: 'none',
-}
+};
 
-const listStyle = {
+const listStyle: CSSProperties = {
   display: 'flex',
   color: '#4d4d4d',
   padding: '.8em',
@@ -15,10 +16,16 @@ const listStyle = {
 };
 
 const nameStyle = {
-  flexGrow: '1',
+  flexGrow: 1,
 };
 
-const BrowserListItem = ({
+export interface Props {
+  title: string;
+  name: string;
+  to: Node;
+}
+
+const BrowserListItem: FC<Props> = ({
   title,
   name,
   children,

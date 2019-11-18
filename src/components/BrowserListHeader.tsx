@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 const style = {
   listStyle: 'none',
-}
+};
 
-const listStyle = {
+const listStyle: CSSProperties = {
   display: 'flex',
   padding: '.8em',
   fontSize: '1.5em',
@@ -12,10 +12,14 @@ const listStyle = {
 };
 
 const nameStyle = {
-  flexGrow: '1',
+  flexGrow: 1,
 };
 
-const BrowserListHeader = ({
+export interface Props {
+  name: string;
+}
+
+const BrowserListHeader: FC<Props> = ({
   name,
   children,
 }) => (

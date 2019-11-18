@@ -1,12 +1,11 @@
 import { TopologyProvider } from 'link-redux'
-import React from 'react';
 
 import { appNS } from '../helpers/app'
 
 export const previewListTopology = appNS('previewList');
 
 class PreviewList extends TopologyProvider {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.topology = previewListTopology;

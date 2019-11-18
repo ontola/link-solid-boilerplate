@@ -1,3 +1,4 @@
+import { Node } from '@ontologies/core';
 import { LinkedResourceContainer } from 'link-redux'
 import React from 'react';
 
@@ -5,7 +6,11 @@ import BrowserListHeader from '../../components/BrowserListHeader'
 import ldp from '../../ontology/ldp'
 import BrowserList from '../../topologies/BrowserList'
 
-const Container = ({ contains }) => (
+export interface Props {
+  contains: Node[];
+}
+
+const Container = ({ contains }: Props) => (
   <BrowserList>
     <BrowserListHeader name="name">
       <span>modified</span>

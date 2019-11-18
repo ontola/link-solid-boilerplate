@@ -1,10 +1,10 @@
-import React from 'react'
-import { withRouter } from 'react-router'
+import React, { FC } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
 
 const divStyle = {
   display: 'flex',
   width: '100%',
-}
+};
 
 const inputStyle = {
   background: 'rgba(0, 0, 0, 0.003)',
@@ -13,7 +13,7 @@ const inputStyle = {
   fontSize: '1.5em',
   padding: '16px',
   width: '100%',
-}
+};
 
 const buttonStyle = {
   background: 'rgba(0, 0, 0, 0.054)',
@@ -22,14 +22,14 @@ const buttonStyle = {
   padding: '1.1em',
 };
 
-const primaryDomainFromIRI = (iri) => {
+const primaryDomainFromIRI = (iri: string) => {
   const url = new URL(iri);
   return url.origin.split('.').slice(-2).join('.');
-}
+};
 
 const OPEN_DIR_MATCHER = /(\w*((?!\/$)\/\w*))+$/i
 
-const normalizeLDPFile = (iri) => {
+const normalizeLDPFile = (iri: string) => {
   try {
     // There is a bug in the turtle parser/serializer which screws up the parsed IRI's, so we need
     // to append a trailing slash to ensure files open correctly.
@@ -43,14 +43,16 @@ const normalizeLDPFile = (iri) => {
   }
 };
 
-const FileSelector = ({ history, location }) => {
+export type Props = RouteComponentProps;
+
+const FileSelector: FC<Props> = ({ history, location }) => {
   const resourceFromURL = new URLSearchParams(location.search).get('resource');
   const [ resource, setResource ] = React.useState(resourceFromURL);
   const [ file, setFile ] = React.useState(resourceFromURL || '');
   const navigate = () => history.push(`/?resource=${normalizeLDPFile(file)}`);
   if (resourceFromURL !== resource) {
     setResource(resourceFromURL);
-    setFile(resourceFromURL);
+    setFile(resourceFromURL!);
   }
 
   return (
@@ -71,6 +73,6 @@ const FileSelector = ({ history, location }) => {
       </button>
     </div>
   )
-}
+};
 
 export default withRouter(FileSelector)

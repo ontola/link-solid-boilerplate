@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { FC } from "react";
 
-const ButtonWithFeedback = ({
+export interface Props {
+  className: string;
+  doneText: string;
+  workingText: string;
+  onClick: () => void;
+}
+
+const ButtonWithFeedback: FC<Props> = ({
   children,
   className,
   doneText,
@@ -12,15 +19,15 @@ const ButtonWithFeedback = ({
   const [ done, setDone ] = React.useState(false);
 
   React.useEffect(() => {
-    let timeout = null;
+    let timeout: number | undefined;
     if (done) {
-      timeout = setTimeout(() => {
+      timeout = window.setTimeout(() => {
         setDone(false);
       }, 2000);
     } else if (done) {
-      clearTimeout(timeout);
+      window.clearTimeout(timeout);
     }
-    return () => clearTimeout(timeout);
+    return () => window.clearTimeout(timeout);
   }, [done]);
 
   return (

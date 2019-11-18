@@ -1,5 +1,5 @@
 import rdfs from '@ontologies/rdfs'
-import { useLRS } from 'link-redux'
+import { FC, useLRS } from "link-redux";
 import React from 'react';
 
 const messageStyle = {
@@ -7,13 +7,13 @@ const messageStyle = {
 };
 const buttonStyle = {
 	margin: '0 .5em',
-}
+};
 
 /**
  * Everything is a rdfs:Resource, so if we hit this view, it means the loaded app list hasn't got
  * the right type (app:TodoList), so we ask the user to initialize the datastructure we need.
  */
-const Resource = ({ subject }) => {
+const Resource: FC = ({ subject }) => {
 	const lrs = useLRS();
 
 	return (

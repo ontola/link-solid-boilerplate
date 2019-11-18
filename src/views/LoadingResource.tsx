@@ -1,11 +1,12 @@
 import { DEFAULT_TOPOLOGY } from 'link-lib'
+import { FC } from 'link-redux';
 import React from 'react';
 
 import ll from '../ontology/ll'
 import { browserListTopology } from '../topologies/BrowserList'
 import { previewListTopology } from '../topologies/PreviewList'
 
-const LoadingResource = () => (
+const LoadingResource: FC = () => (
   <div className="lds-ring">
     <div></div>
     <div></div>

@@ -1,5 +1,5 @@
 import * as statusCodes from 'http-status-codes';
-import { useLRS } from 'link-redux'
+import { ErrorProps, FC, useLRS } from 'link-redux';
 import React from 'react';
 
 import ll from '../ontology/ll'
@@ -10,10 +10,10 @@ import { previewListTopology } from '../topologies/PreviewList'
  * The `error` prop will be present when an error was caught in the tree,
  * otherwise something has gone wrong doing the request.
  */
-const ErrorResource = ({ error, linkRequestStatus: { status }, subject}) => {
+const ErrorResource: FC<ErrorProps> = ({ error, linkRequestStatus: { status }, subject}) => {
   const lrs = useLRS();
 
-  const messageForStatus = (status) => {
+  const messageForStatus = (status: null | number) => {
     switch (status) {
       case statusCodes.NOT_FOUND:
         return [
@@ -24,7 +24,7 @@ const ErrorResource = ({ error, linkRequestStatus: { status }, subject}) => {
           >
             Initialize
           </button>,
-        ]
+        ];
       case statusCodes.UNAUTHORIZED:
         return [
           "Please login to your pod first",
@@ -34,24 +34,24 @@ const ErrorResource = ({ error, linkRequestStatus: { status }, subject}) => {
           >
             Login
           </button>,
-        ]
+        ];
       case statusCodes.FORBIDDEN:
-        return ["The pod denied access to the file", undefined]
+        return ["The pod denied access to the file", undefined];
       default:
         return [`The server sent an unknown error (${status})`, undefined]
     }
-  }
+  };
 
   const message = error
     ? "A client error has occurred"
-    : messageForStatus(status)
+    : messageForStatus(status);
 
   return (
     <p className="TodoMessage">
       {message}
     </p>
   )
-}
+};
 
 ErrorResource.type = ll.ErrorResource;
 

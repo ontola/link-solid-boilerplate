@@ -1209,10 +1209,10 @@
   dependencies:
     type-zoo ">=3.4.1"
 
-"@ontola/mash@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@ontola/mash/-/mash-0.5.2.tgz#1bf6f8af6b977dc4aa518571f60b4a60ec57ed4a"
-  integrity sha512-HdynpMklPGesl+ZPCjpS0e5QEphuDzmVjECyfRZ+FNy8RV7+XSIrxhL3c1onuhj963yYY3qsWGYO+5c9c2Prxg==
+"@ontola/mash@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@ontola/mash/-/mash-0.5.3.tgz#eba064ea68b17a4983eda9140e6c80415c230cb1"
+  integrity sha512-f5ELjXsb6m+KMROZpfD+wm8Zl1UNkhTL3cgJ+KmjVX2JbyFpM3apFTt4HNE+4WzfaOrEGcQWA3zCWc4nik1x+g==
   dependencies:
     express "^4.17.1"
     http-proxy-middleware "^0.19.1"
@@ -4955,10 +4955,10 @@ link-lib@=1.0.0-rc4-datafactory-15:
   dependencies:
     murmurhash-js "^1.0.0"
 
-link-redux@=1.0.0-rc4-datafactory-6:
-  version "1.0.0-rc4-datafactory-6"
-  resolved "https://registry.yarnpkg.com/link-redux/-/link-redux-1.0.0-rc4-datafactory-6.tgz#d76c20416fac2421ccb65109b2ce72dd08ef5ea5"
-  integrity sha512-FrGq3Qt9IURQzR6/WqKHoaCi+NRpfzCTZSr5AAtqcRaKLyTUraCBT86zBWE7m8bFb7/yrqt2vfsYEyCzJR21jQ==
+link-redux@=1.0.0-rc4-datafactory-9:
+  version "1.0.0-rc4-datafactory-9"
+  resolved "https://registry.yarnpkg.com/link-redux/-/link-redux-1.0.0-rc4-datafactory-9.tgz#3cf818421968fb576b5a71b106621b950d432fc4"
+  integrity sha512-SWiC4U/sncjSdHmzBhyDtFhpDxcCa8fDieU6N7DjbzbKaY+RZYwHgPLmD2VKma3zjsoGSu/6p1LJqBnuvlJrkg==
 
 load-json-file@^4.0.0:
   version "4.0.0"

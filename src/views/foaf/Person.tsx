@@ -1,7 +1,7 @@
-import rdf from '@ontologies/core'
+import rdf, { Literal, Node } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
 import React from 'react';
-import { LinkedResourceContainer } from 'link-redux'
+import { FC, LinkedResourceContainer } from "link-redux";
 
 import Link from '../../components/Link'
 import ldp from '../../ontology/ldp'
@@ -12,7 +12,16 @@ const styles = {
   padding: '1em',
 };
 
-const Person = ({
+export interface Props {
+  hasPhoto: Node;
+  inbox: Node;
+  knows: Node[];
+  name: Literal;
+  organizationName: Node;
+  storage: Node;
+}
+
+const Person: FC<Props> = ({
   hasPhoto,
   inbox,
   knows,
@@ -32,23 +41,26 @@ const Person = ({
       />
     )}
     {organizationName && (
-      <PropertyDisplayRow label="Inbox">
+      <div>
+        <p>Inbox</p>
         {organizationName.value}
-      </PropertyDisplayRow>
+      </div>
     )}
     {storage && (
-      <PropertyDisplayRow label="Pod">
+      <div>
+        <p>Pod</p>
         <Link to={storage}>
           {storage.value}
         </Link>
-      </PropertyDisplayRow>
+      </div>
     )}
     {inbox && (
-      <PropertyDisplayRow label="Inbox">
+      <div>
+        <p>Inbox</p>
         <Link to={inbox}>
           {inbox.value}
         </Link>
-      </PropertyDisplayRow>
+      </div>
     )}
     {knows && knows.length > 0 && (
       <PreviewList>
@@ -73,6 +85,6 @@ Person.mapDataToProps = {
   hasPhoto: vcard.ns('hasPhoto'),
   organizationName: vcard.ns('organization-name'),
   storage: rdf.namedNode('http://www.w3.org/ns/pim/space#storage'),
-}
+};
 
 export default Person;

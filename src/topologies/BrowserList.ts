@@ -1,12 +1,11 @@
 import { TopologyProvider } from 'link-redux'
-import React from 'react';
 
 import { appNS } from '../helpers/app'
 
 export const browserListTopology = appNS('browserList');
 
 class BrowserList extends TopologyProvider {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
 
     this.topology = browserListTopology;
