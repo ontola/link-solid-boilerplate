@@ -1,4 +1,3 @@
-import { filename } from "@ontola/mash";
 import dcterms from '@ontologies/dcterms'
 import { Literal, NamedNode } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
@@ -9,6 +8,7 @@ import React from 'react';
 
 import BrowserListItem from '../../components/BrowserListItem'
 import { browserListTopology } from '../../topologies/BrowserList'
+import { filename } from '@rdfdev/iri';
 
 export interface Props {
   name: Literal;

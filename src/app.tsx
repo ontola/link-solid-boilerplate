@@ -9,11 +9,10 @@ import './public/standalone.css'
 import './public/app.css'
 import './useFactory';
 
-import { createLRS } from "@ontola/mash";
 import rdf from '@ontologies/core';
 import { Location } from 'history';
 import {
-  LinkedResourceContainer,
+  Resource,
   LinkReduxLRSType,
   RenderStoreProvider,
 } from "link-redux";
@@ -24,8 +23,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import FileSelector from './components/FileSelector';
 import { applicationURL } from "./config";
-import middleware from "./middleware";
-import views from "./views";
+import generateLRS from './generateLRS';
 
 const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
   const Text = ({ location }: { location: Location }) => {
@@ -48,7 +46,7 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
 
     // lrs.getEntity(rdf.namedNode(resource), { reload: true });
     return (
-      <LinkedResourceContainer subject={rdf.namedNode(resource)} />
+      <Resource subject={rdf.namedNode(resource)} />
     );
   };
 
@@ -67,17 +65,13 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
 };
 
 (function init() {
-  const { lrs } = createLRS({
-    makeGlobal: true,
-    middleware,
-    views,
-  });
+  const { lrs } = generateLRS([]);
 
   // @deprecated TODO
   (lrs.api as any).accept.default = "text/turtle";
 
   ReactDOM.render(
     React.createElement(App, { lrs }),
-    document.getElementById('standaloneApp')
+    document.getElementById('reactRoot')
   );
 })();

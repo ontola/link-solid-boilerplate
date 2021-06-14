@@ -11,18 +11,16 @@ It uses react and Link-Redux to render [linked data](https://ontola.io/what-is-l
 
 ## Get started
 
-Clone this repo `git clone `
-
-Install dependencies `yarn`
-
-Build `yarn build`
-
-Run the server `yarn dev`
-
-Visit `http://localhost:8080/dist/`
-
-Enter a public Pod URL, e.g. `https://joep.inrupt.net/public/`
+- Clone this repo `git clone git@github.com:ontola/link-solid-boilerplate.git`
+- Install dependencies `yarn`
+- Run the server `yarn serve`
+- Visit `http://localhost:1234`
+- Enter a public Pod URL, e.g. `https://joep.inrupt.net/public/`
 
 ## Edit the View
 
 Go to the `./src/views/foaf/Person.jsx` file to understand how Link renders a Person.
+
+## Deploying to github pages
+
+`gh-pages -d ./dist/app`

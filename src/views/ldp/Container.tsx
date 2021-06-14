@@ -1,5 +1,5 @@
 import { Node } from '@ontologies/core';
-import { LinkedResourceContainer } from 'link-redux'
+import { Resource } from 'link-redux'
 import React from 'react';
 
 import BrowserListHeader from '../../components/BrowserListHeader'
@@ -16,7 +16,7 @@ const Container = ({ contains }: Props) => (
       <span>modified</span>
     </BrowserListHeader>
     {contains.map(member => (
-      <LinkedResourceContainer
+      <Resource
         fetch
         key={member.value}
         subject={member}

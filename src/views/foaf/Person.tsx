@@ -1,7 +1,7 @@
 import rdf, { Literal, Node } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
 import React from 'react';
-import { FC, LinkedResourceContainer } from "link-redux";
+import { FC, Resource } from "link-redux";
 
 import Link from '../../components/Link'
 import ldp from '../../ontology/ldp'
@@ -66,7 +66,7 @@ const Person: FC<Props> = ({
       <PreviewList>
         <b>Knows</b>
         {knows.map((iri) => (
-          <LinkedResourceContainer key={iri.value} subject={iri} />
+          <Resource key={iri.value} subject={iri} />
         ))}
       </PreviewList>
     )}

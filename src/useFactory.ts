@@ -1,4 +1,4 @@
-import memoizedHashFactory from "@ontola/memoized-hash-factory";
+import memoizedFactory from "@ontola/memoized-factory";
 import { setup } from "@ontologies/core";
 
-setup(memoizedHashFactory);
+setup(memoizedFactory);

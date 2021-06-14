@@ -1,6 +1,7 @@
-import { createActionPair, replace } from "@ontola/mash";
 import { NamedNode } from "@ontologies/core";
 import rdfx from "@ontologies/rdf";
+import { createActionPair } from "@rdfdev/actions";
+import { replace } from "@rdfdev/delta";
 import { MiddlewareActionHandler } from "link-lib";
 import { LinkReduxLRSType } from "link-redux";
 
