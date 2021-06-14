@@ -2,7 +2,7 @@
   "name": "link-mash-app-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate to set up link apps which can be run stand-alone and loaded as plugins",
-  "main": "dist/package/package.js",
+  "main": "src/app.tsx",
   "export": {
     ".": "dist/package/package.js",
     "app": "dist/app/app.js",

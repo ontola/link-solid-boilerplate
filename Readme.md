@@ -9,6 +9,8 @@ It uses react and Link-Redux to render [linked data](https://ontola.io/what-is-l
 - Link-Redux [docs](https://fletcher91.github.io/link-redux/) & [wiki](https://github.com/fletcher91/link-redux/wiki)
 - [About Solid](https://github.com/solid/solid)
 
+Fork me with [codesandbox](https://codesandbox.io/s/github/ontola/link-solid-boilerplate/tree/master/?file=/src/app.tsx)!
+
 ## Get started
 
 - Clone this repo `git clone git@github.com:ontola/link-solid-boilerplate.git`
