@@ -21,8 +21,8 @@
   "scripts": {
     "rebuild": "yarn run clean && yarn run build",
     "clean": "rm -rf dist/app/* && rm -rf dist/package/* && rm -rf dist/pane/*",
-    "build": "parcel build src/public/index.html --out-dir dist --public-url /js --no-cache",
-    "serve": "parcel serve src/public/index.html --out-dir dist --public-url /js"
+    "build": "parcel build index.html --out-dir dist --public-url /js --no-cache",
+    "serve": "parcel serve index.html --out-dir dist --public-url /js"
   },
   "dependencies": {
     "@ontola/memoized-factory": "^2.0.1",
