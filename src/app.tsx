@@ -15,6 +15,7 @@ import {
   Resource,
   LinkReduxLRSType,
   RenderStoreProvider,
+  Property,
 } from "link-redux";
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -46,7 +47,7 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
 
     // lrs.getEntity(rdf.namedNode(resource), { reload: true });
     return (
-      <Resource subject={rdf.namedNode(resource)} />
+      <Resource subject={rdf.namedNode(resource)} forceRender />
     );
   };
 
@@ -67,8 +68,11 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
 (function init() {
   const { lrs } = generateLRS([]);
 
+  // Make LRS available for dev purposes
+  window.lrs = lrs;
+
   // @deprecated TODO
-  (lrs.api as any).accept.default = "text/turtle";
+  (lrs.api as any).accept.default = "application/n-triples";
 
   ReactDOM.render(
     React.createElement(App, { lrs }),

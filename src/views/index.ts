@@ -1,3 +1,4 @@
+import { LinkReduxLRSType, RegistrableComponent, register } from 'link-redux'
 import ErrorResource from './ErrorResource'
 import Person from './foaf/Person'
 import PersonalProfileDocument from './foaf/PersonalProfileDocument'
@@ -8,7 +9,7 @@ import LoadingResource from './LoadingResource'
 import Resource from './rdfsResource/Resource'
 import ResourceBrowserList from './rdfsResource/ResourceBrowserList'
 
-export default [
+const getViews = (): RegistrableComponent<any>[] => [
   Container,
   Dates,
   ErrorResource,
@@ -19,3 +20,9 @@ export default [
   Resource,
   ResourceBrowserList,
 ]
+
+export default function registerViews(lrs: LinkReduxLRSType) {
+  return lrs.registerAll(...getViews().map(v => {
+    return register(v)
+  }));
+}

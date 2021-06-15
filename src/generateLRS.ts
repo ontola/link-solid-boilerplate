@@ -5,7 +5,7 @@ import * as rdfx from '@ontologies/rdf';
 import * as rdfs from '@ontologies/rdfs';
 import * as schema from '@ontologies/schema';
 import { createBrowserHistory } from 'history';
-import { MiddlewareFn, createStore } from 'link-lib';
+import { MiddlewareFn, createStore, DataProcessor, RequestInitGenerator, RDFStore } from 'link-lib';
 import { LinkReduxLRSType } from 'link-redux';
 
 import { FRONTEND_ACCEPT } from './config';
@@ -16,6 +16,7 @@ import ll from './ontology/ll';
 import { handle } from './middleware/logging';
 import transformers from './helpers/transformers';
 import hexjson from './helpers/hexJSON';
+import registerViews from './views';
 
 export interface LRSBundle {
   history: unknown;
@@ -28,9 +29,28 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   const middleware: Array<MiddlewareFn<any>> = [
     logging(),
   ];
-  const storeOptions = { report: handle };
+  const store = new RDFStore()
+  const storeOptions = {
+    report: handle,
+    // This part is for setting CORS.
+    api: new DataProcessor({
+      requestInitGenerator: new RequestInitGenerator({
+        credentials: "omit",
+        csrfFieldName: "csrf-token",
+        mode: "cors",
+        xRequestedWith: "XMLHttpRequest"
+      }),
+      report: handle,
+      store,
+    })
+  };
   const lrs = createStore<React.ComponentType<any>>(storeOptions, middleware);
-  (lrs as any).bulkFetch = true;
+  // (lrs as any).bulkFetch = true;
+
+  lrs.store.getInternalStore().newPropertyAction(rdfx.type, (statement): boolean => {
+    lrs.processDelta([[statement.subject, rdf.namedNode('http://www.w3.org/2011/http#statusCode'), rdf.literal(200), ll.meta]]);
+    return false
+  })
 
   lrs.api.registerTransformer(hexjson.transformer(lrs), hexjson.mediaTypes, hexjson.acceptValue);
   transformers(lrs).forEach((t) =>
@@ -47,11 +67,6 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   // Globally disable anti-jump rendering
   (lrs as any).broadcast_old = (lrs as any).broadcast;
   (lrs as any).broadcast = (_: boolean, __: number) => (lrs as any).broadcast_old(false, 0);
-
-  const languages = {
-    en: 'en',
-    nl: 'nl',
-  };
 
   const THING_TYPES = [
     schema.Thing,
@@ -75,7 +90,7 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
 
     rdf.quad(schema.Thing, rdfx.type, rdfs.Class),
     rdf.quad(schema.Thing, rdfs.comment, rdf.literal('The most generic type of item.')),
-    rdf.quad(schema.Thing, rdfs.label, rdf.literal('Thing', languages.en)),
+    rdf.quad(schema.Thing, rdfs.label, rdf.literal('Thing', 'en')),
   ];
   // tslint:enable max-line-length
 
@@ -100,6 +115,9 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   if (initialDelta.length > 0) {
     lrs.processDelta(initialDelta);
   }
+
+  // Iterates over all locally defined views and adds them to the store, so the store knows which components to render for which classes
+  registerViews(lrs);
 
   return {
     history,

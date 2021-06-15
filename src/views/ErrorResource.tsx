@@ -1,4 +1,5 @@
 import * as statusCodes from 'http-status-codes';
+import { DEFAULT_TOPOLOGY } from 'link-lib';
 import { ErrorProps, FC, useLRS } from 'link-redux';
 import React from 'react';
 
@@ -56,7 +57,7 @@ const ErrorResource: FC<ErrorProps> = ({ error, linkRequestStatus: { status }, s
 ErrorResource.type = ll.ErrorResource;
 
 ErrorResource.topology = [
-  undefined,
+  DEFAULT_TOPOLOGY,
   browserListTopology,
   previewListTopology,
 ];

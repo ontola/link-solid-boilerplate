@@ -7,12 +7,7 @@ import { browserListTopology } from '../topologies/BrowserList'
 import { previewListTopology } from '../topologies/PreviewList'
 
 const LoadingResource: FC = () => (
-  <div className="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <div>loading...</div>
 );
 
 LoadingResource.type = ll.LoadingResource;
