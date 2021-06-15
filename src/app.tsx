@@ -5,8 +5,8 @@
  * @module app
  */
 
-import './public/standalone.css'
-import './public/app.css'
+import './public/standalone.css';
+import './public/app.css';
 import './useFactory';
 
 import rdf from '@ontologies/core';
@@ -15,7 +15,6 @@ import {
   Resource,
   LinkReduxLRSType,
   RenderStoreProvider,
-  Property,
 } from "link-redux";
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -45,7 +44,6 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
       );
     }
 
-    // lrs.getEntity(rdf.namedNode(resource), { reload: true });
     return (
       <Resource subject={rdf.namedNode(resource)} forceRender />
     );
