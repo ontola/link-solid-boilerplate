@@ -1187,7 +1187,7 @@
   resolved "https://registry.yarnpkg.com/@ontola/memoized-factory/-/memoized-factory-2.0.1.tgz#f490adc8c5c9218907e0fe5a9420dc695c370d4d"
   integrity sha512-BGJtBF8HyrcpH2HAdVxVD1moyfesfIekZqms/RFTgyydEG2yA/2kbBjX83KG5IFvSrHeCLiATpQ/35+m9AZsKA==
 
-"@ontologies/core@^2.0.2":
+"@ontologies/core@>=2.0.0", "@ontologies/core@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@ontologies/core/-/core-2.0.2.tgz#b19094ee722f0e46d338af76dbf36c2fdc0a58d7"
   integrity sha512-bFlN791V5QwlBQ1fT/i2Ybc4Wjkc9TUeqJJPzWWx3aex89nJ5nAyEsNtpUATCdeIhDO+NsVWzFPblSmY3IlUIg==
@@ -5356,10 +5356,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-link-lib@0.0.0-be8bf512:
-  version "0.0.0-be8bf512"
-  resolved "https://registry.yarnpkg.com/link-lib/-/link-lib-0.0.0-be8bf512.tgz#8b6315d9f2ec9b6dbdd8c8b1448a0f4e73842e77"
-  integrity sha512-W+vA7SaWVPkQM96cEcc9zdm9FueF3OIMR+ymU+RqNA+lsM6r+6kxOlDHbpbLkPuaVE4cja93SKyejRfM3+m2lg==
+link-lib@0.0.0-deceb0f8:
+  version "0.0.0-deceb0f8"
+  resolved "https://registry.yarnpkg.com/link-lib/-/link-lib-0.0.0-deceb0f8.tgz#6f04d18bc9585187dfa2efd7fd79eb0c0487254a"
+  integrity sha512-HgbnkRvtMG+zgyjrxhuLH0pn64qc8tAARFDl+P3LLwISIe1BjYDM4j2c14DXI+2Y/6cMmI3beN0uHaYlX53T2g==
 
 link-redux@0.0.0-0452814a:
   version "0.0.0-0452814a"
@@ -5638,10 +5638,12 @@ msrcrypto@^1.5.6:
   resolved "https://registry.yarnpkg.com/msrcrypto/-/msrcrypto-1.5.8.tgz#be419be4945bf134d8af52e9d43be7fa261f4a1c"
   integrity sha512-ujZ0TRuozHKKm6eGbKHfXef7f+esIhEckmThVnz7RNyiOJd7a6MXj2JGBoL9cnPDW+JMG16MoTUh5X+XXjI66Q==
 
-n-quads-parser@=2.0.3-ontologies:
-  version "2.0.3-ontologies"
-  resolved "https://registry.yarnpkg.com/n-quads-parser/-/n-quads-parser-2.0.3-ontologies.tgz#5f0d7079a115b5f1cbdcdb4bfcdf8621ae5725f1"
-  integrity sha512-1XYLfcO/0ysh8TfiUDEgZEvyYbhOYQGOU2d5jUZOOaLzB13anrD4AMdd9JXw6/xtN39J7EGdoNBugNp3C0FG4g==
+n-quads-parser@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/n-quads-parser/-/n-quads-parser-2.1.1.tgz#30a21c7d449abc9021b5289753b1ef83d4107a3c"
+  integrity sha512-A/AT8rMW5zkymPQWQXp+Tx0fwnaQ4/e296gmXWRWInNc/SHQTU2yUgAL+yIHP19K202HhZmwYc2YIVtVYUMOHQ==
+  dependencies:
+    "@ontologies/core" ">=2.0.0"
 
 nan@^2.12.1:
   version "2.14.2"
