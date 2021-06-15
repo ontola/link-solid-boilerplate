@@ -21,8 +21,8 @@
   "scripts": {
     "rebuild": "yarn run clean && yarn run build",
     "clean": "rm -rf dist/app/* && rm -rf dist/package/* && rm -rf dist/pane/*",
-    "build": "parcel build index.html --out-dir dist --public-url /js --no-cache",
-    "serve": "parcel serve index.html --out-dir dist --public-url /js"
+    "build": "parcel build index.html --dist-dir dist --public-url /js --no-cache",
+    "serve": "parcel serve index.html --dist-dir dist --public-url /js"
   },
   "dependencies": {
     "@ontola/memoized-factory": "^2.0.1",
@@ -63,6 +63,7 @@
     "gh-pages": "^2.1.1",
     "import-to-array": "^1.0.0",
     "jest": "^24.9.0",
+    "parcel": "^2.0.0-beta.2",
     "solid-auth-client": "^2.4.1",
     "typescript": "^4.3.2"
   },
