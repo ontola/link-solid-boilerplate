@@ -1175,10 +1175,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@ontola/link-devtools@^1.1.1":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@ontola/link-devtools/-/link-devtools-1.1.2.tgz#83cb07d9d3d367be96fcd280438d3fa288a1c419"
-  integrity sha512-8/S1bKXhMRARlnI8iBhoEPpTdxvbltjkFrVr0yBRMs1f/O5d9bH8G/awIhJEF947SG9ulqEBEKsksrBnW9YnZw==
+"@ontola/link-devtools@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@ontola/link-devtools/-/link-devtools-2.0.2.tgz#de593262848e14a01f1bd4cc7c3b2297119cdd51"
+  integrity sha512-DcCCGxbDs70LNagzubXQ6K5p3EZn1go7panKRrc2bFtoMoLafaLzKZIFeimn5KH116K3b5Z49/nJbECmbRDiwA==
   dependencies:
     type-zoo ">=3.4.1"
 

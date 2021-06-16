@@ -29,11 +29,10 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   const middleware: Array<MiddlewareFn<any>> = [
     logging(),
   ];
-  const store = new RDFStore()
+  // const store = new RDFStore()
   const storeOptions = {
     report: handle,
-    // This part is for setting CORS.
-    api: new DataProcessor({
+    apiOpts: {
       requestInitGenerator: new RequestInitGenerator({
         credentials: "omit",
         csrfFieldName: "csrf-token",
@@ -41,8 +40,29 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
         xRequestedWith: "XMLHttpRequest"
       }),
       report: handle,
-      store,
-    })
+      // store,
+      accept: {
+        // Here you can set the default Accept header per domain
+        // This is required for setting a serialization format that is supported by the server
+        "https://joep.inrupt.net": "application/n-quads",
+      },
+    }
+    // This part is for setting CORS.
+    // api: new DataProcessor({
+    //   requestInitGenerator: new RequestInitGenerator({
+    //     credentials: "omit",
+    //     csrfFieldName: "csrf-token",
+    //     mode: "cors",
+    //     xRequestedWith: "XMLHttpRequest"
+    //   }),
+    //   report: handle,
+    //   // store,
+    //   accept: {
+    //     // Here you can set the default Accept header per domain
+    //     // This is required for setting a serialization format that is supported by the server
+    //     "https://joep.inrupt.net": "application/n-quads",
+    //   }
+    // })
   };
   const lrs = createStore<React.ComponentType<any>>(storeOptions, middleware);
   // (lrs as any).bulkFetch = true;

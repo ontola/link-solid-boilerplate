@@ -1,5 +1,5 @@
 {
-  "name": "link-mash-app-boilerplate",
+  "name": "link-solid-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate to set up link apps which can be run stand-alone and loaded as plugins",
   "main": "src/app.tsx",
@@ -11,13 +11,6 @@
   "author": "Fletcher91 <thom@ontola.io>",
   "license": "GPL-3.0-or-later",
   "private": false,
-  "solid": {
-    "applicationURL": {
-      "development": "http://localhost:8000/",
-      "production": "_enter the url your application will be run from_"
-    },
-    "name": "_my app name_"
-  },
   "scripts": {
     "rebuild": "yarn run clean && yarn run build",
     "clean": "rm -rf dist/app/* && rm -rf dist/package/* && rm -rf dist/pane/*",
@@ -54,7 +47,7 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "@ontola/link-devtools": "^1.1.1",
+    "@ontola/link-devtools": "^2.0.2",
     "@types/node": "^12.12.7",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",

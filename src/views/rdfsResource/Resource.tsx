@@ -19,7 +19,6 @@ const Resource: FC = ({ subject }) => {
 
 	return (
 		<p className="TodoMessage" style={messageStyle}>
-			{/* <Property label={rdf.namedNode("https://atomicdata.dev/properties/description")} /> */}
 			It looks like the resource isn't a known type, do you want to initialize the file?
 			<button
 				className="Button"
