@@ -8,6 +8,7 @@ It uses react and Link-Redux to render [linked data](https://ontola.io/what-is-l
 
 ## Reference material
 
+- See [the tutorial](https://ontola.io/blog/rdf-solid-react-tutorial-link/)
 - Link-Redux [docs](https://fletcher91.github.io/link-redux/) & [wiki](https://github.com/fletcher91/link-redux/wiki)
 - [About Solid](https://github.com/solid/solid)
 
