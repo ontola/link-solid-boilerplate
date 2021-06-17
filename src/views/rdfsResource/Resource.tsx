@@ -14,7 +14,7 @@ const buttonStyle = {
  * Everything is a rdfs:Resource, so if we hit this view, it means the loaded app list hasn't got
  * the right type (app:TodoList), so we ask the user to initialize the datastructure we need.
  */
-const Resource: FC = ({ subject }) => {
+const Thing: FC = ({ subject }) => {
 	const lrs = useLRS();
 
 	return (
@@ -31,6 +31,6 @@ const Resource: FC = ({ subject }) => {
 	);
 };
 
-Resource.type = rdfs.Resource;
+Thing.type = rdfs.Resource;
 
-export default Resource;
+export default Thing;

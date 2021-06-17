@@ -29,6 +29,7 @@ Container.type = ldp.Container;
 
 Container.mapDataToProps = {
   contains: {
+    // Here we pass a NamedNode containing the URL for `ldp:Contains`
     label: ldp.contains,
     limit: Infinity,
   }

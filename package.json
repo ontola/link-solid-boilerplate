@@ -9,7 +9,7 @@
     "pane": "dist/pane/pane.js"
   },
   "author": "Fletcher91 <thom@ontola.io>",
-  "license": "GPL-3.0-or-later",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "rebuild": "yarn run clean && yarn run build",

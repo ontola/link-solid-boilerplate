@@ -1,10 +1,10 @@
-# Link Solid Component Boilerplate
+# Link Solid Boilerplate
 
 A basic boilerplate for creating Solid Components which can also run as standalone apps.
 
-It uses react and Link-Redux to render [linked data](https://ontola.io/what-is-linked-data/).
+It uses react and [Link](https://fletcher91.github.io/link-redux) to render [linked data](https://ontola.io/what-is-linked-data/).
 
-**Fork me on [codesandbox](https://codesandbox.io/s/github/ontola/link-solid-boilerplate/tree/master/?file=/src/app.tsx)!**
+**Demo + playground on [codesandbox](https://codesandbox.io/s/github/ontola/link-solid-boilerplate/tree/master/?file=/src/app.tsx)!**
 
 ## Reference material
 

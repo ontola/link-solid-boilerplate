@@ -6,7 +6,7 @@ import PersonPreviewList from './foaf/PersonPreviewList'
 import Container from './ldp/Container'
 import Dates from './Literal/Dates'
 import LoadingResource from './LoadingResource'
-import Resource from './rdfsResource/Resource'
+import Thing from './rdfsResource/Resource'
 import ResourceBrowserList from './rdfsResource/ResourceBrowserList'
 
 const getViews = (): RegistrableComponent<any>[] => [
@@ -17,7 +17,7 @@ const getViews = (): RegistrableComponent<any>[] => [
   Person,
   PersonPreviewList,
   PersonalProfileDocument,
-  Resource,
+  Thing,
   ResourceBrowserList,
 ]
 

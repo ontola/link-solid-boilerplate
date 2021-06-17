@@ -5,10 +5,9 @@ import * as rdfx from '@ontologies/rdf';
 import * as rdfs from '@ontologies/rdfs';
 import * as schema from '@ontologies/schema';
 import { createBrowserHistory } from 'history';
-import { MiddlewareFn, createStore, DataProcessor, RequestInitGenerator, RDFStore } from 'link-lib';
+import { MiddlewareFn, createStore, RequestInitGenerator } from 'link-lib';
 import { LinkReduxLRSType } from 'link-redux';
 
-import { FRONTEND_ACCEPT } from './config';
 import logging from './middleware/logging';
 import { appOntology, website } from './ontology/app';
 import ll from './ontology/ll';
@@ -17,6 +16,7 @@ import { handle } from './middleware/logging';
 import transformers from './helpers/transformers';
 import hexjson from './helpers/hexJSON';
 import registerViews from './views';
+import ldp from './ontology/ldp';
 
 export interface LRSBundle {
   history: unknown;
@@ -47,22 +47,6 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
         "https://joep.inrupt.net": "application/n-quads",
       },
     }
-    // This part is for setting CORS.
-    // api: new DataProcessor({
-    //   requestInitGenerator: new RequestInitGenerator({
-    //     credentials: "omit",
-    //     csrfFieldName: "csrf-token",
-    //     mode: "cors",
-    //     xRequestedWith: "XMLHttpRequest"
-    //   }),
-    //   report: handle,
-    //   // store,
-    //   accept: {
-    //     // Here you can set the default Accept header per domain
-    //     // This is required for setting a serialization format that is supported by the server
-    //     "https://joep.inrupt.net": "application/n-quads",
-    //   }
-    // })
   };
   const lrs = createStore<React.ComponentType<any>>(storeOptions, middleware);
   // (lrs as any).bulkFetch = true;
@@ -81,9 +65,6 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
     handle(new Error('No website in head'));
   }
 
-  // @ts-ignore TS2341
-  lrs.api.accept.default = FRONTEND_ACCEPT;
-
   // Globally disable anti-jump rendering
   (lrs as any).broadcast_old = (lrs as any).broadcast;
   (lrs as any).broadcast = (_: boolean, __: number) => (lrs as any).broadcast_old(false, 0);
@@ -94,6 +75,7 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
     owl.Thing,
   ].map((t) => rdf.id(t));
 
+  // This fixes a bug in link-lib where THING_TYPES are rendered for all views
   lrs.store.getInternalStore().newPropertyAction(rdfx.type, (q: Quad): boolean => {
     if (THING_TYPES.includes(rdf.id(q.object))) {
       return false;
@@ -107,10 +89,13 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   const ontologicalClassData = [
     rdf.quad(schema.Thing, rdfs.subClassOf, rdfs.Resource),
     rdf.quad(owl.Thing, owl.sameAs, schema.Thing),
-
     rdf.quad(schema.Thing, rdfx.type, rdfs.Class),
     rdf.quad(schema.Thing, rdfs.comment, rdf.literal('The most generic type of item.')),
     rdf.quad(schema.Thing, rdfs.label, rdf.literal('Thing', 'en')),
+
+    // Fix for registering the view
+    rdf.quad(ldp.Container, rdfs.subClassOf, rdfs.Resource),
+
   ];
   // tslint:enable max-line-length
 
