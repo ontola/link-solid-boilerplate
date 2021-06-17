@@ -3,7 +3,7 @@ import { Literal, NamedNode } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
 import rdfs from '@ontologies/rdfs'
 import schema from '@ontologies/schema'
-import { FC, Property } from "link-redux";
+import { FC, Property, useProperty } from "link-redux";
 import React from 'react';
 
 import BrowserListItem from '../../components/BrowserListItem'
@@ -14,10 +14,18 @@ export interface Props {
   name: Literal;
 }
 
+const namePredicates = [
+  schema.name,
+  rdfs.label,
+  dcterms.title,
+  foaf.name,
+]
+
 const ResourceBrowserList: FC<Props> = ({
-  name,
   subject,
 }) => {
+  const [name] = useProperty(namePredicates)
+  const [modified] = useProperty(dcterms.modified);
   const displayName = name?.value || filename(subject as NamedNode);
 
   return (
@@ -26,7 +34,7 @@ const ResourceBrowserList: FC<Props> = ({
       title={subject.value}
       to={subject}
     >
-        <Property label={dcterms.modified} />
+      {modified.value}
     </BrowserListItem>
   );
 };
@@ -34,16 +42,5 @@ const ResourceBrowserList: FC<Props> = ({
 ResourceBrowserList.type = rdfs.Resource;
 
 ResourceBrowserList.topology = browserListTopology;
-
-ResourceBrowserList.mapDataToProps = {
-  name: [
-    schema.name,
-    rdfs.label,
-    dcterms.title,
-    foaf.name,
-  ],
-};
-
-ResourceBrowserList.linkOpts = { forceRender: true };
 
 export default ResourceBrowserList;

@@ -5361,10 +5361,10 @@ link-lib@0.0.0-deceb0f8:
   resolved "https://registry.yarnpkg.com/link-lib/-/link-lib-0.0.0-deceb0f8.tgz#6f04d18bc9585187dfa2efd7fd79eb0c0487254a"
   integrity sha512-HgbnkRvtMG+zgyjrxhuLH0pn64qc8tAARFDl+P3LLwISIe1BjYDM4j2c14DXI+2Y/6cMmI3beN0uHaYlX53T2g==
 
-link-redux@0.0.0-0452814a:
-  version "0.0.0-0452814a"
-  resolved "https://registry.yarnpkg.com/link-redux/-/link-redux-0.0.0-0452814a.tgz#2bccd29390973ebfa756a1a45e67c918cd83acb1"
-  integrity sha512-XDlVKy92NQvasiVDhth302it99CABVKYwry+o0xp4iS40lgvX4soia/9g6k1o9E/DwCYFq8QpBSn4hXwhgnlCA==
+link-redux@0.0.0-380164d2:
+  version "0.0.0-380164d2"
+  resolved "https://registry.yarnpkg.com/link-redux/-/link-redux-0.0.0-380164d2.tgz#aed4bb0319f5f1f264f688d883179197f310c790"
+  integrity sha512-sHVB3e6MhTW29ytrPfJhnd2eiR9aoPhG401LwWxgq+4BpHe3OB/+KXYYbUwhqSwoPZoOAFJl0NBcHEnmTcMS3A==
 
 load-json-file@^4.0.0:
   version "4.0.0"
