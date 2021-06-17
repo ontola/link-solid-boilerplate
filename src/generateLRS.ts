@@ -29,7 +29,7 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
   const middleware: Array<MiddlewareFn<any>> = [
     logging(),
   ];
-  // const store = new RDFStore()
+
   const storeOptions = {
     report: handle,
     apiOpts: {
@@ -40,11 +40,12 @@ export default function generateLRS(initialDelta: Quad[] = []): LRSBundle {
         xRequestedWith: "XMLHttpRequest"
       }),
       report: handle,
-      // store,
       accept: {
+        // This will be expanded by link when adding processors.
+        default: '',
         // Here you can set the default Accept header per domain
         // This is required for setting a serialization format that is supported by the server
-        "https://joep.inrupt.net": "application/n-quads",
+        // "https://example.com": "application/n-quads",
       },
     }
   };

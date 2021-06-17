@@ -8,7 +8,7 @@
 import './public/standalone.css';
 import './public/app.css';
 import './useFactory';
-import enableDevtools from '@ontola/link-devtools'
+import enableDevtools from '@ontola/link-devtools';
 import rdf from '@ontologies/core';
 import { Location } from 'history';
 import {
@@ -66,13 +66,8 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
 (function init() {
   const { lrs } = generateLRS([]);
 
-  // Make LRS available for dev purposes
-  window.lrs = lrs;
+  // Enable devtools, see `dev.help` for options.
   enableDevtools(lrs);
-
-
-  // @deprecated TODO
-  (lrs.api as any).accept.default = "application/n-triples";
 
   ReactDOM.render(
     React.createElement(App, { lrs }),

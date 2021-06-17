@@ -3,45 +3,34 @@ import {
   ResponseTransformer,
   transformers,
 } from 'link-lib';
-// import N3 from 'n3';
-// import rdf from '@ontologies/core';
+import { n3Processor } from "./n3Processor";
 
-// N3.DataFactory = rdf
-
+const PRIO_HIGH = .9;
 const PRIO_MAX = 1.0;
-
-// const parser = new N3.Parser();
-// parser.parse(
-//   body,
-//   (error, quad, prefixes) => {
-//     if (quad)
-//       console.log(quad);
-//     else
-//       console.log("# That's all, folks!", prefixes);
-// });
 
 export default (lrs: LinkedRenderStore<any>): Array<{
   acceptValue: number;
   mediaTypes: string;
-  storeTransformer: boolean;
   transformer: ResponseTransformer;
 }> => ([
-  // {
-  //   acceptValue: PRIO_MAX,
-  //   mediaTypes: 'application/n-triples',
-  //   storeTransformer: false,
-  //   transformer: transformers.linkedDeltaProcessor(lrs),
-  // },
+  {
+    acceptValue: PRIO_MAX,
+    mediaTypes: 'application/n-triples',
+    transformer: transformers.linkedDeltaProcessor(lrs),
+  },
   {
     acceptValue: PRIO_MAX,
     mediaTypes: 'application/n-quads',
-    storeTransformer: true,
     transformer: transformers.linkedDeltaProcessor(lrs),
   },
-  // {
-  //   acceptValue: PRIO_MAX,
-  //   mediaTypes: 'text/turtle',
-  //   storeTransformer: false,
-  //   transformer: transformers.linkedDeltaProcessor(lrs),
-  // },
+  {
+    acceptValue: PRIO_HIGH,
+    mediaTypes: 'text/turtle',
+    transformer: n3Processor(lrs),
+  },
+  {
+    acceptValue: PRIO_HIGH,
+    mediaTypes: 'text/n3',
+    transformer: n3Processor(lrs),
+  },
 ]);
