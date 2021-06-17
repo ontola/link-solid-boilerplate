@@ -3,7 +3,7 @@ import { Literal, NamedNode } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
 import rdfs from '@ontologies/rdfs'
 import schema from '@ontologies/schema'
-import { FC, Property, useProperty } from "link-redux";
+import { FC, useProperty } from "link-redux";
 import React from 'react';
 
 import BrowserListItem from '../../components/BrowserListItem'
@@ -21,7 +21,7 @@ const namePredicates = [
   foaf.name,
 ]
 
-const ResourceBrowserList: FC<Props> = ({
+const ThingBrowserList: FC<Props> = ({
   subject,
 }) => {
   const [name] = useProperty(namePredicates)
@@ -39,8 +39,7 @@ const ResourceBrowserList: FC<Props> = ({
   );
 };
 
-ResourceBrowserList.type = rdfs.Resource;
+ThingBrowserList.type = rdfs.Resource;
+ThingBrowserList.topology = browserListTopology;
 
-ResourceBrowserList.topology = browserListTopology;
-
-export default ResourceBrowserList;
+export default ThingBrowserList;

@@ -6,9 +6,10 @@ import PersonPreviewList from './foaf/PersonPreviewList'
 import Container from './ldp/Container'
 import Dates from './Literal/Dates'
 import LoadingResource from './LoadingResource'
-import Thing from './rdfsResource/Resource'
-import ResourceBrowserList from './rdfsResource/ResourceBrowserList'
+import Thing from './rdfsResource/Thing'
+import ThingBrowserList from './rdfsResource/ThingBrowserList'
 
+// When adding a View, add it to this list, after which it will be properly registered.
 const getViews = (): RegistrableComponent<any>[] => [
   Container,
   Dates,
@@ -18,7 +19,7 @@ const getViews = (): RegistrableComponent<any>[] => [
   PersonPreviewList,
   PersonalProfileDocument,
   Thing,
-  ResourceBrowserList,
+  ThingBrowserList,
 ]
 
 export default function registerViews(lrs: LinkReduxLRSType) {
