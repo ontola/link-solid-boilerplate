@@ -1,7 +1,7 @@
 import * as statusCodes from 'http-status-codes';
 import { DEFAULT_TOPOLOGY } from 'link-lib';
 import { ErrorProps, FC, useLRS } from 'link-redux';
-import React from 'react';
+import * as React from 'react';
 
 import ll from '../ontology/ll'
 import { browserListTopology } from '../topologies/BrowserList'

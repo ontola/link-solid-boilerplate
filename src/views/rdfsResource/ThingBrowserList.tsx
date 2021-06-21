@@ -4,7 +4,7 @@ import foaf from '@ontologies/foaf'
 import rdfs from '@ontologies/rdfs'
 import schema from '@ontologies/schema'
 import { FC, useProperty } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 import BrowserListItem from '../../components/BrowserListItem'
 import { browserListTopology } from '../../topologies/BrowserList'

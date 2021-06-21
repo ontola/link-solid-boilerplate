@@ -1,7 +1,7 @@
 import { Literal } from '@ontologies/core';
 import foaf from '@ontologies/foaf';
 import { FC, useProperty } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 import Link from '../../components/Link'
 import { previewListTopology } from '../../topologies/PreviewList'

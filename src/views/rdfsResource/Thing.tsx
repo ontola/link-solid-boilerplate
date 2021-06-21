@@ -1,6 +1,6 @@
 import rdfs from '@ontologies/rdfs'
 import { FC, useLRS } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 const messageStyle = {
 	padding: '1.0em',

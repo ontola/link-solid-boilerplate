@@ -1,6 +1,6 @@
 import foaf from '@ontologies/foaf'
 import { FC, Property } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 const PersonalProfileDocument: FC = () => <Property label={foaf.primaryTopic} />;
 

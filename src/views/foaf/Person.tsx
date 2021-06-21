@@ -1,6 +1,6 @@
 import rdf, { Literal, Node } from "@ontologies/core";
 import foaf from '@ontologies/foaf'
-import React from 'react';
+import * as React from 'react';
 import { FC, Resource } from "link-redux";
 
 import Link from '../../components/Link'

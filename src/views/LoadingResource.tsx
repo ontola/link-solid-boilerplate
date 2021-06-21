@@ -1,6 +1,6 @@
 import { DEFAULT_TOPOLOGY } from 'link-lib'
 import { FC } from 'link-redux';
-import React from 'react';
+import * as React from 'react';
 
 import ll from '../ontology/ll'
 import { browserListTopology } from '../topologies/BrowserList'

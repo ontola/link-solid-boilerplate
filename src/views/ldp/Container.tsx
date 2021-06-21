@@ -1,5 +1,5 @@
 import { Resource, useProperty } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 import BrowserListHeader from '../../components/BrowserListHeader'
 import ldp from '../../ontology/ldp'

@@ -1,7 +1,7 @@
 import rdfs from '@ontologies/rdfs'
 import xsd from '@ontologies/xsd'
 import { FC, PropertyProps } from "link-redux";
-import React from 'react';
+import * as React from 'react';
 
 import { browserListTopology } from '../../topologies/BrowserList'
 

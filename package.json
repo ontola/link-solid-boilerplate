@@ -2,12 +2,7 @@
   "name": "link-solid-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate to set up link apps which can be run stand-alone and loaded as plugins",
-  "main": "src/app.tsx",
-  "export": {
-    ".": "dist/package/package.js",
-    "app": "dist/app/app.js",
-    "pane": "dist/pane/pane.js"
-  },
+  "main": "index.html",
   "author": "Fletcher91 <thom@ontola.io>",
   "license": "MIT",
   "private": false,
