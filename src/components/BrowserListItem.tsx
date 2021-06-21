@@ -1,5 +1,6 @@
 import { Node } from "@ontologies/core";
-import React, { CSSProperties, FC } from 'react';
+import { CSSProperties, FC } from 'react';
+import * as React from 'react';
 
 import Link from './Link'
 
