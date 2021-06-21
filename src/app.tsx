@@ -17,6 +17,7 @@ import {
   RenderStoreProvider,
 } from "link-redux";
 import { createElement } from 'react';
+import * as React from "react";
 import { render } from 'react-dom';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';

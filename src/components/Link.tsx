@@ -1,7 +1,8 @@
 import { Node } from '@ontologies/core';
 import * as H from "history";
 import { useLinkRenderContext } from 'link-redux';
-import React, { FC } from "react";
+import { FC } from "react";
+import * as React from "react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 export type Props<S = H.LocationState> = { to?: Node } & Omit<NavLinkProps<S>, "to">

@@ -1,4 +1,6 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import * as React from "react";
+
 
 export interface Props {
   className: string;
