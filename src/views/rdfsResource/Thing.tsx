@@ -1,6 +1,5 @@
 import rdfs from '@ontologies/rdfs'
-import rdf from '@ontologies/core'
-import { FC, Property, useLRS } from "link-redux";
+import { FC, useLRS } from "link-redux";
 import React from 'react';
 
 const messageStyle = {

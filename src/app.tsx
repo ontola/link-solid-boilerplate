@@ -16,8 +16,8 @@ import {
   LinkReduxLRSType,
   RenderStoreProvider,
 } from "link-redux";
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createElement } from 'react';
+import { render } from 'react-dom';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -69,8 +69,8 @@ const App = ({ lrs }: { lrs: LinkReduxLRSType }) => {
   // Enable devtools, see `dev.help` for options.
   enableDevtools(lrs);
 
-  ReactDOM.render(
-    React.createElement(App, { lrs }),
+  render(
+    createElement(App, { lrs }),
     document.getElementById('reactRoot')
   );
 })();

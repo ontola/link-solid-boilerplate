@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 export interface Props {
   className: string;
@@ -15,10 +15,10 @@ const ButtonWithFeedback: FC<Props> = ({
   onClick,
   ...other
 }) => {
-  const [ working, setWorking ] = React.useState(false);
-  const [ done, setDone ] = React.useState(false);
+  const [ working, setWorking ] = useState(false);
+  const [ done, setDone ] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let timeout: number | undefined;
     if (done) {
       timeout = window.setTimeout(() => {
