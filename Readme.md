@@ -1,5 +1,7 @@
 # Link Solid Boilerplate
 
+_note: this repository is no longer maintained._
+
 A basic boilerplate for creating Solid Components which can also run as standalone apps.
 
 It uses react and [Link](https://fletcher91.github.io/link-redux) to render [linked data](https://ontola.io/what-is-linked-data/).
